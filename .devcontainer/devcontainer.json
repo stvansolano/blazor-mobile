@@ -2,19 +2,15 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.134.1/containers/docker-from-docker-compose
 {
-	"name": "Docker from Docker Compose + Kubernetes & Helm",
+	"name": "Blazor Mobile Sample",
 	"dockerFile": "Dockerfile",
-	//"dockerComposeFile": [
-	//	"docker-compose.yml"]
-	//,
 
 	//"service": "docker-from-docker",
 	"workspaceFolder": "/workspace",
 
 	// Use this environment variable if you need to bind mount your local source code into a new container.
 	"remoteEnv": {
-		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
-		"SYNC_LOCALHOST_KUBECONFIG": "true"
+		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
 	},
 
 	"mounts": [
@@ -41,12 +37,11 @@
 		"vscode-icons-team.vscode-icons",
 		"visualstudioexptteam.vscodeintellicode",
 		"ms-azuretools.vscode-docker",
-		"ms-kubernetes-tools.vscode-kubernetes-tools",
 		"ms-mssql.mssql"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [],
+	"forwardPorts": [8000, 5000],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "kubectl version",
