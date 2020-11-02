@@ -34,6 +34,7 @@ RUN chown ${USERNAME}:root /usr/local/share/copy-kube-config.sh \
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 
+#RUN curl -H 'Cache-Control: no-cache' -L https://aka.ms/install-dotnet-preview -o install-dotnet-preview.sh && sudo bash install-dotnet-preview.sh
 # Setting the ENTRYPOINT to docker-init.sh will configure non-root access to the Docker
 # socket. The script will also execute CMD if you need to alter startup behaviors.
 ENTRYPOINT [ "/usr/local/share/docker-init.sh" ]
