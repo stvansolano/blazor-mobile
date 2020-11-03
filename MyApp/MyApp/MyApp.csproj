@@ -27,6 +27,7 @@
     <Folder Include="WebUI\Pages\" />
     <Folder Include="Services\" />
   </ItemGroup>
+  <!-- Razor pages 'linking' -->
   <ItemGroup>
     <Content Include="..\MyApp.Shared\Pages\Counter.razor">
       <Link>WebUI\Pages\Counter.razor</Link>
