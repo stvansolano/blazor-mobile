@@ -1,14 +1,13 @@
 ﻿using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
-using MyApp.Shared;
-using MyApp.Shared.Services;
+using MyApp.Shared.Models;
 
 namespace MyApp
 {
-	public class MobileWeatherForecast : IForecastService
+	public class MobileWeatherForecast : MyApp.Shared.Services.WeatherForecastService
 	{
-		public async Task<WeatherForecast[]> GetForecastAsync()
+		public override async Task<WeatherForecast[]> GetForecastAsync()
 		{
 			return await JsonSerializer.DeserializeAsync<WeatherForecast[]>(
 				new MemoryStream(System.Text.Encoding.UTF8.GetBytes(JSON))

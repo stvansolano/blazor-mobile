@@ -17,7 +17,6 @@ namespace MyApp
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddScoped<Shared.Services.IForecastService>(service => new MobileWeatherForecast());
-                    services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost") });
 
                     // Adds web-specific services such as NavigationManager
                     services.AddBlazorHybrid();

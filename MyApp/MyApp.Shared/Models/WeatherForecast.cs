@@ -1,5 +1,6 @@
 ﻿using System;
-namespace MyApp.Shared
+
+namespace MyApp.Shared.Models
 {
     public class WeatherForecast
     {
