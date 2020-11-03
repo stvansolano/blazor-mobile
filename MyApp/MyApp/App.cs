@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
@@ -15,6 +16,9 @@ namespace MyApp
             var hostBuilder = MobileBlazorBindingsHost.CreateDefaultBuilder()
                 .ConfigureServices((hostContext, services) =>
                 {
+                    services.AddScoped<Shared.Services.IForecastService>(service => new MobileWeatherForecast());
+                    services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost") });
+
                     // Adds web-specific services such as NavigationManager
                     services.AddBlazorHybrid();
 
@@ -31,6 +35,7 @@ namespace MyApp
             {
                 hostBuilder.UseStaticFiles();
             }
+
             var host = hostBuilder.Build();
 
             MainPage = new ContentPage { Title = "My Application" };
