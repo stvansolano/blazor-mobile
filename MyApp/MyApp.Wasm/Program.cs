@@ -18,7 +18,7 @@ namespace MyApp.Wasm
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
 
-            builder.Services.AddScoped<IForecastService>(sp => new WeatherForecastService());
+            builder.Services.AddScoped<MyApp.Shared.Services.IForecastService>(sp => new MyApp.Wasm.Services.WasmWeatherForecastService());
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
             await builder.Build().RunAsync();
