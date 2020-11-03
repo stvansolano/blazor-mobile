@@ -20,4 +20,21 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyApp.Shared\MyApp.Shared.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WebUI\Pages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\MyApp.Shared\Pages\Counter.razor">
+      <Link>WebUI\Pages\Counter.razor</Link>
+    </Content>
+    <Content Include="..\MyApp.Shared\Pages\Index.razor">
+      <Link>WebUI\Pages\Index.razor</Link>
+    </Content>
+    <Content Include="..\MyApp.Shared\Pages\FetchData.razor">
+      <Link>WebUI\Pages\FetchData.razor</Link>
+    </Content>
+  </ItemGroup>
 </Project>
