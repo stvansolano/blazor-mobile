@@ -14,4 +14,16 @@
     <ProjectReference Include="..\MyApp.Shared\MyApp.Shared.csproj" />
   </ItemGroup>
 
+  <!-- Razor pages 'linking' -->
+  <ItemGroup>
+    <Content Include="..\MyApp.Shared\Pages\Counter.razor">
+      <Link>WebUI\Pages\Counter.razor</Link>
+    </Content>
+    <Content Include="..\MyApp.Shared\Pages\Index.razor">
+      <Link>WebUI\Pages\Index.razor</Link>
+    </Content>
+    <Content Include="..\MyApp.Shared\Pages\FetchData.razor">
+      <Link>WebUI\Pages\FetchData.razor</Link>
+    </Content>
+  </ItemGroup>
 </Project>
